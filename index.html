@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,44 +37,4 @@
   </div>
 <script src="js/index.js"></script>
 </body>
-=======
-  <head>
-    <meta charset="utf-8">
-    <title>主页</title>
-    <script src="js/jquery-3.2.1.min.js"></script>
-  </head>
-
-  <body>
-	<input placeholder="请输入城市名" id="cityName">
-	<button id="search">查询</button>
-	<div id="weather">
-	</div>
-</body>  
-<script type="text/javascript">
-	var searchBTN = $("#search");
-	searchBTN.click(function(){
-		var cityName = $("#cityName").val();
-		searchWeather( cityName )
-	})
-	function searchWeather( cityName ){
-		$.ajax({
-            type: 'GET',
-            url: 'http://wthrcdn.etouch.cn/weather_mini',
-			async:false, 
-            dataType : "jsonp",                           //与json相似，为跨域而生
-            contentType: "application/json",
-            data: {
-            	'city': cityName
-            } ,
-            success: function(data) {
-				var weather = $("#weather");
-				weather.html( JSON.stringify(data) );
-            },
-			error : function(){
-				alert("error");
-			}
-        });
-	}
-</script>
->>>>>>> 6de84e86ca98b1e7af18213945c9dc981676544e
 </html>
