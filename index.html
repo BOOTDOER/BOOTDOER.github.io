@@ -1,5 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="build/css/element-ui-theme-chalk.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!-- import Vue before Element -->
+  <script src="build/js/vue.js"></script>
+  <script src="build/js/element-ui.js"></script>
+  <!-- router,后期加入路由 -->
+  <script src="build/js/vue-router.js"></script>
+  <title>Mr Lin 的 个人主页</title>
+</head>
+<body>
+  <div id="app">
+        <header>
+            <div class="header-user">
+              <img class="header-logo" src="img/user.jpg" />
+              <p>Mr Lin</p>
+              <span>“一个热爱技术，喜欢钻研的猫咪饲养员~”</span>
+            </div>
+            <el-row class="header-right">
+                <a v-for="item in nav" :href="item.url">
+                  <el-col :span="6">{{item.name}}</el-col>
+                </a>
+            </el-row>
+        </header>
+        <main>
+            <div class="main-center">
+                <p>Begin Anywhere</p>
+                <h6>Your passion will guide you</h6>
+                <el-button type="info">View our works</el-button>
+            </div>
+        </main>
+  </div>
+<script src="js/index.js"></script>
+</body>
+=======
   <head>
     <meta charset="utf-8">
     <title>主页</title>
@@ -38,4 +77,5 @@
         });
 	}
 </script>
+>>>>>>> 6de84e86ca98b1e7af18213945c9dc981676544e
 </html>
