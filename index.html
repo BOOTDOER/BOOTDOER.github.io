@@ -1,19 +1,41 @@
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>主页</title>
+    <script src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
   </head>
 
   <body>
-    hello
-    <iframe src="https://bootdoer.github.io/index"></iframe>
-  </body>
+	<input placeholder="请输入城市名" id="cityName">
+	<button id="search">查询</button>
+	<div id="weather">
+	</div>
+</body>  
+<script type="text/javascript">
+	var searchBTN = $("#search");
+	searchBTN.click(function(){
+		var cityName = $("#cityName").val();
+		searchWeather( cityName )
+	})
+	function searchWeather( cityName ){
+		$.ajax({
+            type: 'GET',
+            url: 'http://wthrcdn.etouch.cn/weather_mini',
+			async:false, 
+            dataType : "jsonp",                           //与json相似，为跨域而生
+            contentType: "application/json",
+            data: {
+            	'city': cityName
+            } ,
+            success: function(data) {
+				var weather = $("#weather");
+				weather.html( JSON.stringify(data) );
+            },
+			error : function(){
+				alert("error");
+			}
+        });
+	}
+</script>
 </html>
